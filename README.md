@@ -7,7 +7,7 @@ I am going to walk through the steps on how to host a Minecraft server using a b
 1. Install AWS specific to your Device ( OS specific tutorial: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 2. Install Ansible: type 'brew install ansible'
 
-# List of Commands to Run:
+# List of Commands to Run, and ENV variables to set:
 1. Run `aws configure` and follow the prompts, or place credentials in `.gitignore/.env`.
 2. Make sure `.gitignore/.env` contains valid `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_SESSION_TOKEN` values.
 3. Run `source .gitignore/.env` (or `set -a && source .gitignore/.env && set +a`) and then `aws sts get-caller-identity` to confirm the credentials work.
