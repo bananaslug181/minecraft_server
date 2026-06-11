@@ -18,6 +18,6 @@ I am going to walk through the steps on how to host a Minecraft server using a b
    
 # Sources:
 ## for run_minecraft.sh: 
-Amazon Web Services, "Getting started with Amazon MSK - Amazon Elastic Compute Cloud," AWS Documentation, 2026. [Online]. Available: https://docs.aws.amazon.com/ec2/latest/devguide/example_ec2_GettingStarted_057_section.html
+Amazon Web Services, "Getting started with Amazon MSK - Amazon Elastic Compute Cloud," AWS Documentation, 2026. [Online]. Available: [Link](https://docs.aws.amazon.com/ec2/latest/devguide/example_ec2_GettingStarted_057_section.html)
 ## for playbook.yml:
-T. Hummel, "Minecraft Server Setup," Tom Hummel, May 26, 2024. [Online]. Available: https://tomhummel.com/posts/minecraft-server-setup/ (accessed Jun. 10, 2026).
+T. Hummel, "Minecraft Server Setup," Tom Hummel, May 26, 2024. [Online]. Available: [Link] (https://tomhummel.com/posts/minecraft-server-setup/) (accessed Jun. 10, 2026).
