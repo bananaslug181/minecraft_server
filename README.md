@@ -8,7 +8,7 @@ I am going to walk through the steps on how to host a Minecraft server using a b
 2. Install Ansible: type 'brew install ansible'
 
 # Diagram:
-!(https://github.com/bananaslug181/minecraft_server/blob/main/Screen%20Shot%202026-06-10%20at%2011.41.41%20PM.png)
+![image](https://github.com/bananaslug181/minecraft_server/blob/main/Screen%20Shot%202026-06-10%20at%2011.41.41%20PM.png)
 
 # List of Commands to Run, and ENV variables to set:
 1. Run `aws configure` and follow the prompts, or place credentials in `.gitignore/.env`.
