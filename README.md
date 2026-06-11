@@ -1,6 +1,7 @@
 # minecraft_server Setup Guide
 
-# Backround: I am going to walk through the steps on how to host a Minecraft server using a bash script to launch an EC2 Instance, and Ansible. We will do it by creating a script to provision the EC2 instance, creating a YML playbook to run Ansible, and then making one giant script to run both the playbook and the EC2 script altogether.
+# Backround: 
+I am going to walk through the steps on how to host a Minecraft server using a bash script to launch an EC2 Instance, and Ansible. We will do it by creating a script to provision the EC2 instance, creating a YML playbook to run Ansible, and then making one giant script to run both the playbook and the EC2 script altogether.
 
 # Requirements:
 1. Install AWS specific to your Device ( OS specific tutorial: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
