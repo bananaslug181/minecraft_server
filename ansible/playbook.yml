@@ -1,0 +1,72 @@
+---
+- name: Install Minecraft Server
+  hosts: mcservers
+  gather_facts: yes
+  become: yes
+  vars:
+    minecraft:
+      version: "1.20.4"
+      aikars_flags: "-Xms800M -Xmx800M -XX:+UseG1GC"      
+  
+  tasks:
+    - name: Update and upgrade packages
+      package:
+        update_cache: yes
+        upgrade: yes
+
+    - name: Install Java 21 and dependencies
+      package:
+        name:
+          - "{{ 'openjdk-21-jdk-headless' if ansible_os_family == 'Debian' else 'java-21-amazon-corretto-headless' }}"
+          - wget
+          - screen
+        state: present
+        update_cache: yes
+    
+    - name: Ensure Minecraft directory exists
+      file:
+        path: /home/ubuntu/minecraft-server
+        state: directory
+        owner: ubuntu
+        group: ubuntu
+        mode: '0755'
+
+    - name: Download Minecraft server jar
+      get_url:
+        url: "https://piston-data.mojang.com/v1/objects/97ccd4c0ed3f81bbb7bfacddd1090b0c56f9bc51/server.jar"
+        dest: /home/ubuntu/minecraft-server/server.jar
+        mode: '0644'
+        
+    - name: Accept EULA
+      copy:
+        content: 'eula=true'
+        dest: '/home/ubuntu/minecraft-server/eula.txt'
+        
+    - name: Create Minecraft Service
+      copy:
+        content: |
+          [Unit]
+          Description=Minecraft Server
+          
+          [Service]
+          WorkingDirectory=/home/ubuntu/minecraft-server/
+          ExecStart=/usr/bin/java {{ minecraft.aikars_flags }} -jar /home/ubuntu/minecraft-server/server.jar nogui
+          User=ubuntu
+          Group=ubuntu
+          Type=simple
+          Restart=always
+          RestartSec=30s
+
+          [Install]
+          WantedBy=multi-user.target
+        dest: "/etc/systemd/system/minecraft.service"
+
+    - name: Reload systemd
+      systemd:
+        daemon_reload: yes
+
+    - name: Enable and start service
+      systemd:
+        name: minecraft
+        enabled: yes
+        state: started
