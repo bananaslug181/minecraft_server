@@ -21,6 +21,7 @@ I am going to walk through the steps on how to host a Minecraft server using a b
 5. Run `./run_minecraft.sh` from the project root.
 
 # How to Connect Once Running:
+1. It will output an IP address after it runs. Take it and go to "multiplayer" in Minecraft Java, and click "direct connection". Enter the IP and click join.
    
 # Sources:
 ## for run_minecraft.sh: 
