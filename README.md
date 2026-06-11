@@ -1,5 +1,8 @@
 # minecraft_server Setup Guide
 
+# Link to Video Demo with NMap: 
+[link] (https://media.oregonstate.edu/media/t/1_5343l395) 
+
 # Backround: 
 I am going to walk through the steps on how to host a Minecraft server using a bash script to launch an EC2 Instance, and Ansible. We will do it by creating a script to provision the EC2 instance, creating a YML playbook to run Ansible, and then making one giant script to run both the playbook and the EC2 script altogether.
 
